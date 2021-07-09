@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ---
 
 ### 0.2.0 (July 9, 2021)
-- Add simple word vector notebook using SpaCy
+- Add simple word vector notebook using [`spaCy`](https://spacy.io/)
 - Add notebook to perform basic analysis on texts using existing tokenizers
 - Reorganize folders
 
