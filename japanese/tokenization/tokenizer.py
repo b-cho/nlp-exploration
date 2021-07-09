@@ -1,23 +1,23 @@
 import fugashi
 import argparse
 from pathlib import Path
+from tqdm import tqdm
 
 parser = argparse.ArgumentParser(description="MeCab-based tokenizer. MeCabを使用している形態素解析器。")
 parser.add_argument('files', metavar='files', nargs='*', default=[], help='Files to convert to .txt format.')
 args = parser.parse_args()
 
-tagger = fugashi.Tagger()
+tagger = fugashi.Tagger() # Initialize MeCab tagger
 
 def tokenize(text):
     tokens = tagger(text) # Get tokens, see documentation for fields
 
     def format_output(tokens):
         output_string = ''
-        output_string += '{:　<10s}{:　<10s}{:　<10s}{:　<10s}\n'.format('言葉', '発音形出現形', '語彙素', '品詞大分類')
-        output_string += '-' * 65 + '\n'
-        for token in tokens:
-            print(token)
-            output_string += '{:　<10s}{:　<10s}{:　<10s}{:　<10s}\n'.format(token.surface, token.feature.pron or '', token.feature.lemma or '', token.feature.pos1 or '')
+        output_string += '{:　<10s}{:　<10s}{:　<10s}{:　<10s}{:　<10s}{:　<10s}\n'.format('言葉', '発音形出現形', '語彙素', '品詞大分類', '品詞中分類', '語種')
+        output_string += '-' * 85 + '\n'
+        for token in tqdm(tokens):
+            output_string += '{:　<10s}{:　<10s}{:　<10s}{:　<10s}{:　<10s}{:　<10s}\n'.format(token.surface, token.feature.pron or '', token.feature.lemma or '', token.feature.pos1 or '', token.feature.pos2 or '', token.feature.goshu or '')
 
         return output_string
 

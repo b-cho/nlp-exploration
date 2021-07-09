@@ -14,6 +14,10 @@
 2. Install [Visual Studio 2015-2019](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0).
 3. Locate where your Python installation is, then copy the `libmecab.dll` file from `Python\lib\site-packages\fugashi` to `Python\Python{VERSION}\site-packages\fugashi`.
 
+## Installing SpaCy
+
+See [here](https://spacy.io/usage) for installation and basic usage information.
+
 # Comments and Resources
 
 I prefer using `fugashi` because it has a [more Pythonic interface](https://www.dampfkraft.com/nlp/fugashi.html) relative to `mecab-python3` and is better maintained. See [here](https://www.dampfkraft.com/nlp/fugashi.html) for more details. In particular, a nice walkthrough of the `fugashi` library can be found [here](https://www.dampfkraft.com/nlp/how-to-tokenize-japanese.html).
@@ -21,3 +25,5 @@ I prefer using `fugashi` because it has a [more Pythonic interface](https://www.
 More information on UniDic's official field names can be found [here](https://unidic.ninjal.ac.jp/faq#col_name), and are used in `fugashi` as well.
 
 Information on 表記ゆれ (*hyouki-yure*, orthographical variants) can be found [here](https://ja.wikipedia.org/wiki/%E8%A1%A8%E8%A8%98%E3%82%86%E3%82%8C). (Japanese-language Wikipedia)
+
+A copy of the [青空文庫](https://aozora.gr.jp) (Aozora Bunko) on GitHub can be found [here](https://github.com/aozorabunko/aozorabunko).
